@@ -6,16 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Category extends Model
+class StockIn extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'category_name'
-    ];
-
     public function products() : HasMany
     {
-        return $this->hasMany(Product::class , 'product_category');
+        return $this->hasMany(Product::class , 'id');
     }
 }
